@@ -1,4 +1,4 @@
-  This is release 0.1 of the Caml Light system with functions used @ UniPi, for Unix machines.
+  This is release 0.1 of the Caml Light system with functions studied @ UniPi, for Unix machines.
 
 This version is a release of the first stable version of Camllight (0.75).
 * Add unipi_forall
