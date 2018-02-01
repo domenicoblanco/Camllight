@@ -186,3 +186,23 @@ let rec partition p l =
   | x :: l -> if p x then part (x :: yes) no l else part yes (x :: no) l in
   part [] [] l;;
 
+let rec unipi_forall p l = match l with
+ [] -> true
+ |x::xs -> if p x then unipi_forall p xs else false;;
+
+let rec unipi_exists p l = match l with
+ [] -> false 
+ |x::xs -> if p x then true else unipi_exists p xs;;
+
+let unipi_map f l = match l with
+ [] -> []
+ |x::xs -> f x :: unipi_map f xs;;
+ 
+let unipi_filter p l = match l with
+ [] -> []
+ |x::xs when p x -> x::unipi_filter p xs
+ |x::xs when not(p x) -> unipi_filter p xs;;
+
+let unipi_foldr f a l = match l with
+ [] -> a
+ |x::xs -> f x (unipi_foldr f a xs);;
